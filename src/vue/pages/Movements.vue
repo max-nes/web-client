@@ -4,7 +4,7 @@
       @asset-updated="updateAsset"
       @movements-update-required="emitUpdateList('movements:updateList')"
     />
-    <movements-history-module
+    <movements-history
       :asset-code="asset.code"
       :key="`movements-history-state-${historyState}`"
     />
@@ -13,7 +13,7 @@
 
 <script>
 import MovementsTopBarModule from '@modules/movements-top-bar'
-import MovementsHistoryModule from '@/vue/modules/movements-history'
+import MovementsHistory from '@/vue/pages/MovementsHistory'
 
 import config from '@/config'
 import UpdateList from '@/vue/mixins/update-list.mixin'
@@ -22,7 +22,7 @@ export default {
   name: 'movements-page',
   components: {
     MovementsTopBarModule,
-    MovementsHistoryModule,
+    MovementsHistory,
   },
 
   mixins: [UpdateList],

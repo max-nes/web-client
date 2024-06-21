@@ -361,3 +361,11 @@ $col-hint-wrapper-box-text: $_concrete;
 $col-tooltip-wrapper-msg-bg: rgba($_black, 0.9);
 $col-tooltip-wrapper-msg-text: $_white;
 $col-tooltip-wrapper-border-style: transparent transparent $col-tooltip-wrapper-msg-bg transparent;
+
+// movements-table
+$col-movements-table-cell-width: 10rem;
+$col-movements-table-cell-width-expand-btn-wrp: 6.7rem;
+$col-movements-table-cell-width-direction: 1.25rem;
+$col-movements-table-cell-side-padding: 1.5rem;
+$col-movements-table-row-btn-hover-bg: darken($col-app-content-background, 3%);
+$col-movements-table-row-btn-active-bg: darken($col-app-content-background, 10%);

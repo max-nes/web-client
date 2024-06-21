@@ -6,7 +6,7 @@
       @show-no-data-message="showNoDataMessage = true"
     />
 
-    <movements-history-module
+    <movements-history
       v-if="asset.code"
       :asset-code="asset.code"
       :key="`movements-history-state-${historyState}`"
@@ -15,7 +15,7 @@
         slot="loader"
         message-id="op-pages.assets-loading-msg"
       />
-    </movements-history-module>
+    </movements-history>
 
     <no-data-message
       v-else-if="showNoDataMessage"
@@ -35,7 +35,7 @@
 import NoDataMessage from '@/vue/common/NoDataMessage'
 import Loader from '@/vue/common/Loader'
 import MovementsTopBarModule from '@modules/movements-top-bar'
-import MovementsHistoryModule from '@/vue/modules/movements-history'
+import MovementsHistory from '@/vue/pages/MovementsHistory'
 
 export default {
   name: 'register-of-shares-page',
@@ -43,7 +43,7 @@ export default {
     NoDataMessage,
     Loader,
     MovementsTopBarModule,
-    MovementsHistoryModule,
+    MovementsHistory,
   },
 
   data: _ => ({

@@ -49,7 +49,7 @@
           class="dashboard__activity"
           v-if="currentAssetCode"
         >
-          <movements-history-module
+          <movements-history
             :asset-code="currentAssetCode"
             :ref="REFS.movementsHistory"
             :latest-activity="true"
@@ -90,7 +90,7 @@ import Transfer from '@/vue/forms/TransferForm'
 import IssuanceForm from '@/vue/forms/IssuanceForm'
 import Drawer from '@/vue/common/Drawer'
 import Chart from '@/vue/common/chart/Chart'
-import MovementsHistoryModule from '@/vue/modules/movements-history'
+import MovementsHistory from '@/vue/pages/MovementsHistory'
 
 import UpdateList from '@/vue/mixins/update-list.mixin'
 
@@ -109,7 +109,7 @@ export default {
     Drawer,
     IssuanceForm,
     Chart,
-    MovementsHistoryModule,
+    MovementsHistory,
   },
 
   mixins: [UpdateList],
