@@ -10,14 +10,14 @@ import identities from './identities.module'
 import kycRecovery from './kyc-recovery.module'
 import assetsModule from '@/vue/modules/assets/shared/store'
 import fees from '@/vue/modules/fees/store'
+import createAssetRequest from './create-asset-request.module'
+import updateAssetRequest from './update-asset-request.module'
+import createSaleRequest from './create-sale-request.module'
+import preIssuanceRequest from './pre-issuance-request.module'
+import incomingWithdrawalRequest from './incoming-withdrawal-request.module'
+import pollRequest from './poll-request.module'
 import movementsHistory from '@/vue/modules/movements-history/store'
 import issuanceExplorer from '@/vue/modules/issuance-explorer/store'
-import createAssetRequests from '@/vue/modules/requests/create-asset-requests/store'
-import createSaleRequests from '@/vue/modules/requests/create-sale-requests/store'
-import incomingWithdrawalRequests from '@/vue/modules/requests/incoming-withdrawal-requests/store'
-import pollRequests from '@/vue/modules/requests/poll-requests/store'
-import preIssuanceRequests from '@/vue/modules/requests/pre-issuance-requests/store'
-import updateAssetRequests from '@/vue/modules/requests/update-asset-requests/store'
 import idleHandler from './idle-handler.module'
 import { vuexTypes } from '@/vuex/types'
 import { sessionStoragePlugin } from './plugins/session-storage'
@@ -91,16 +91,16 @@ function buildStore () {
       identities,
       idleHandler,
       kycRecovery,
+      createAssetRequest,
+      updateAssetRequest,
+      createSaleRequest,
+      preIssuanceRequest,
+      incomingWithdrawalRequest,
+      pollRequest,
       'assets-module': assetsModule,
       'fees': fees,
       'issuance-explorer': issuanceExplorer,
       'movements-history': movementsHistory,
-      'create-asset-requests': createAssetRequests,
-      'create-sale-requests': createSaleRequests,
-      'incoming-withdrawal-requests': incomingWithdrawalRequests,
-      'poll-requests': pollRequests,
-      'pre-issuance-requests': preIssuanceRequests,
-      'update-asset-requests': updateAssetRequests,
     },
     plugins: [sessionStoragePlugin],
   })

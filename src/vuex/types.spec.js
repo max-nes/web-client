@@ -8,6 +8,12 @@ import wallet from './wallet.module'
 import idleHandler from './idle-handler.module'
 import kycRecovery from './kyc-recovery.module'
 import identities from './identities.module'
+import createAssetRequest from './create-asset-request.module'
+import updateAssetRequest from './update-asset-request.module'
+import createSaleRequest from './create-sale-request.module'
+import preIssuanceRequest from './pre-issuance-request.module'
+import incomingWithdrawalRequest from './incoming-withdrawal-request.module'
+import pollRequest from './poll-request.module'
 
 describe('vuex types unit tests', () => {
   const getModuleKeys = (module) => {
@@ -46,6 +52,24 @@ describe('vuex types unit tests', () => {
     for (const key of getModuleKeys(kycRecovery)) {
       expect(vuexTypes).to.have.property(key)
     }
+    for (const key of getModuleKeys(createAssetRequest)) {
+      expect(vuexTypes).to.have.property(key)
+    }
+    for (const key of getModuleKeys(updateAssetRequest)) {
+      expect(vuexTypes).to.have.property(key)
+    }
+    for (const key of getModuleKeys(createSaleRequest)) {
+      expect(vuexTypes).to.have.property(key)
+    }
+    for (const key of getModuleKeys(preIssuanceRequest)) {
+      expect(vuexTypes).to.have.property(key)
+    }
+    for (const key of getModuleKeys(incomingWithdrawalRequest)) {
+      expect(vuexTypes).to.have.property(key)
+    }
+    for (const key of getModuleKeys(pollRequest)) {
+      expect(vuexTypes).to.have.property(key)
+    }
   })
 
   it('every key described in vuex-types should be a real vuex-entity', () => {
@@ -59,6 +83,12 @@ describe('vuex types unit tests', () => {
       ...getModuleKeys(identities),
       ...getModuleKeys(idleHandler),
       ...getModuleKeys(kycRecovery),
+      ...getModuleKeys(createAssetRequest),
+      ...getModuleKeys(updateAssetRequest),
+      ...getModuleKeys(createSaleRequest),
+      ...getModuleKeys(preIssuanceRequest),
+      ...getModuleKeys(incomingWithdrawalRequest),
+      ...getModuleKeys(pollRequest),
     ]
 
     for (const key of Object.keys(vuexTypes)) {

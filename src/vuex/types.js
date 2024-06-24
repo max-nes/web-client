@@ -32,6 +32,32 @@ const mutations = {
 
   // identities
   SET_IDENTITIES: 'SET_IDENTITIES',
+
+  // create asset requests
+  SET_CREATE_ASSET_REQUESTS: 'SET_CREATE_ASSET_REQUESTS',
+  CONCAT_CREATE_ASSET_REQUESTS: 'CONCAT_CREATE_ASSET_REQUESTS',
+  SET_KYC_REQUIRED_ASSET_TYPE: 'SET_KYC_REQUIRED_ASSET_TYPE',
+  SET_SECURITY_ASSET_TYPE: 'SET_SECURITY_ASSET_TYPE',
+
+  // update asset requests
+  SET_UPDATE_ASSET_REQUESTS: 'SET_UPDATE_ASSET_REQUESTS',
+  CONCAT_UPDATE_ASSET_REQUESTS: 'CONCAT_UPDATE_ASSET_REQUESTS',
+
+  // create sale requests
+  SET_CREATE_SALE_REQUESTS: 'SET_CREATE_SALE_REQUESTS',
+  CONCAT_CREATE_SALE_REQUESTS: 'CONCAT_CREATE_SALE_REQUESTS',
+
+  // pre issuance requests
+  SET_PRE_ISSUANCE_REQUESTS: 'SET_PRE_ISSUANCE_REQUESTS',
+  CONCAT_PRE_ISSUANCE_REQUESTS: 'CONCAT_PRE_ISSUANCE_REQUESTS',
+
+  // incoming withdrawal requests
+  CONCAT_INCOMING_WITHDRAWAL_REQUESTS: 'CONCAT_INCOMING_WITHDRAWAL_REQUESTS',
+  SET_INCOMING_WITHDRAWAL_REQUESTS: 'SET_INCOMING_WITHDRAWAL_REQUESTS',
+
+  // poll requests
+  SET_POLL_REQUESTS: 'SET_POLL_REQUESTS',
+  CONCAT_POLL_REQUESTS: 'CONCAT_POLL_REQUESTS',
 }
 
 const actions = {
@@ -78,6 +104,32 @@ const actions = {
 
   // identities
   LOAD_IDENTITIES_BY_ACCOUNT_ID: 'LOAD_IDENTITIES_BY_ACCOUNT_ID',
+
+  // create asset requests
+  LOAD_CREATE_ASSET_REQUESTS: 'LOAD_CREATE_ASSET_REQUESTS',
+  CANCEL_CREATE_ASSET_REQUEST: 'CANCEL_CREATE_ASSET_REQUEST',
+  LOAD_KYC_REQUIRED_ASSET_TYPE: 'LOAD_KYC_REQUIRED_ASSET_TYPE',
+  LOAD_SECURITY_ASSET_TYPE: 'LOAD_SECURITY_ASSET_TYPE',
+
+  // update asset requests
+  LOAD_UPDATE_ASSET_REQUESTS: 'LOAD_UPDATE_ASSET_REQUESTS',
+  CANCEL_UPDATE_ASSET_REQUEST: 'CANCEL_UPDATE_ASSET_REQUEST',
+
+  // create sale requests
+  LOAD_CREATE_SALE_REQUESTS: 'LOAD_CREATE_SALE_REQUESTS',
+  CANCEL_CREATE_SALE_REQUESTS: 'CANCEL_CREATE_SALE_REQUESTS',
+
+  // pre issuance requests
+  LOAD_PRE_ISSUANCE_REQUESTS: 'LOAD_PRE_ISSUANCE_REQUESTS',
+
+  // incoming withdrawal requests
+  REJECT_INCOMING_WITHDRAWAL_REQUEST: 'REJECT_INCOMING_WITHDRAWAL_REQUEST',
+  APPROVE_INCOMING_WITHDRAWAL_REQUEST: 'APPROVE_INCOMING_WITHDRAWAL_REQUEST',
+  LOAD_INCOMING_WITHDRAWAL_REQUESTS: 'LOAD_INCOMING_WITHDRAWAL_REQUESTS',
+
+  // poll requests
+  LOAD_POLL_REQUESTS: 'LOAD_POLL_REQUESTS',
+  CANCEL_POLL_REQUEST: 'CANCEL_POLL_REQUEST',
 }
 
 const getters = {
@@ -150,6 +202,26 @@ const getters = {
   // identitys
   usersIdentities: 'usersIdentities',
   emailByAccountId: 'emailByAccountId',
+
+  // create assets requests
+  createAssetRequests: 'createAssetRequests',
+  kycRequiredAssetType: 'kycRequiredAssetType',
+  securityAssetType: 'securityAssetType',
+
+  // update assets requests
+  updateAssetRequests: 'updateAssetRequests',
+
+  // create sale requests
+  createSaleRequests: 'createSaleRequests',
+
+  // pre issuance requests
+  preIssuanceRequests: 'preIssuanceRequests',
+
+  // incoming withdrawal requests
+  incomingWithdrawalRequests: 'incomingWithdrawalRequests',
+
+  // poll requests
+  pollRequests: 'pollRequests',
 }
 
 export const vuexTypes = {

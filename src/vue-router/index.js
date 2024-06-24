@@ -16,13 +16,13 @@ import SaleDetails from '@/vue/pages/SaleDetails'
 import SaleCampaignViewer from '@/vue/pages/sale-details/SaleCampaignViewer'
 import Polls from '@/vue/pages/Polls'
 import PollsAll from '@/vue/pages/PollsAll'
-import PollRequestsModule from '@/vue/modules/requests/poll-requests'
 import Trade from '@/vue/pages/Trade'
-import CreateAssetRequestsModule from '@/vue/modules/requests/create-asset-requests'
-import UpdateAssetRequestsModule from '@/vue/modules/requests/update-asset-requests'
-import CreateSaleRequestsModule from '@/vue/modules/requests/create-sale-requests'
-import PreIssuanceRequestsModule from '@/vue/modules/requests/pre-issuance-requests'
-import IncomingWithdrawalRequestsModule from '@/vue/modules/requests/incoming-withdrawal-requests'
+import PollRequests from '@/vue/pages/PollRequests'
+import CreateAssetRequests from '@/vue/pages/CreateAssetRequests'
+import UpdateAssetRequests from '@/vue/pages/UpdateAssetRequests'
+import CreateSaleRequests from '@/vue/pages/CreateSaleRequests'
+import PreIssuanceRequests from '@/vue/pages/PreIssuanceRequests'
+import IncomingWithdrawalRequests from '@/vue/pages/IncomingWithdrawalRequests'
 import Issuance from '@/vue/pages/Issuance'
 import Limits from '@/vue/pages/Limits'
 import Fees from '@/vue/pages/Fees'
@@ -248,7 +248,7 @@ const router = new Router({
               path: '/polls/poll-requests',
               name: vueRoutes.pollRequests.name,
               props: true,
-              component: PollRequestsModule,
+              component: PollRequests,
               meta: {
                 isCorporateOnly: true,
               },
@@ -292,7 +292,7 @@ const router = new Router({
             {
               path: '/requests/asset-creation',
               name: vueRoutes.assetCreationRequests.name,
-              component: CreateAssetRequestsModule,
+              component: CreateAssetRequests,
               beforeEnter: inAppRouteGuard,
               meta: {
                 isCorporateOnly: true,
@@ -301,7 +301,7 @@ const router = new Router({
             {
               path: '/requests/asset-update',
               name: vueRoutes.assetUpdateRequests.name,
-              component: UpdateAssetRequestsModule,
+              component: UpdateAssetRequests,
               beforeEnter: inAppRouteGuard,
               meta: {
                 isCorporateOnly: true,
@@ -310,7 +310,7 @@ const router = new Router({
             {
               path: '/requests/sale-creation',
               name: vueRoutes.saleCreationRequests.name,
-              component: CreateSaleRequestsModule,
+              component: CreateSaleRequests,
               beforeEnter: inAppRouteGuard,
               meta: {
                 isCorporateOnly: true,
@@ -319,7 +319,7 @@ const router = new Router({
             {
               path: '/requests/pre-issuance-upload',
               name: vueRoutes.preIssuanceUploadRequests.name,
-              component: PreIssuanceRequestsModule,
+              component: PreIssuanceRequests,
               beforeEnter: inAppRouteGuard,
               meta: {
                 isCorporateOnly: true,
@@ -328,7 +328,7 @@ const router = new Router({
             {
               path: '/requests/incoming-withdrawal',
               name: vueRoutes.incomingWithdrawalRequests.name,
-              component: IncomingWithdrawalRequestsModule,
+              component: IncomingWithdrawalRequests,
               beforeEnter: inAppRouteGuard,
               meta: {
                 isCorporateOnly: true,
