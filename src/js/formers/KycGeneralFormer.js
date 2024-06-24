@@ -25,6 +25,7 @@ export class KycGeneralFormer extends Former {
       firstName: '',
       lastName: '',
       dateOfBirth: '',
+      age: '',
       idDocType: '',
       idDocFace: new Document(),
       idDocBack: new Document(),
@@ -91,6 +92,7 @@ export class KycGeneralFormer extends Former {
     this.attrs.firstName = source.firstName
     this.attrs.lastName = source.lastName
     this.attrs.dateOfBirth = source.dateOfBirth
+    this.attrs.age = source.age
     this.attrs.idDocType = source.idDocType
     this.attrs.idDocFace = source.idDocFace
     this.attrs.idDocBack = source.idDocBack
@@ -105,6 +107,7 @@ export class KycGeneralFormer extends Former {
     this.attrs.address.state = source.address.state
     this.attrs.address.postalCode = source.address.postalCode
     this.attrs.address.country = source.address.country
+    //  console.dir(this.attrs)
   }
 
   /** @param {KycRequestRecord|KycRecoveryRequestRecord} source */
@@ -151,6 +154,7 @@ export class KycGeneralFormer extends Former {
       first_name: str(attrs.firstName),
       last_name: str(attrs.lastName),
       date_of_birth: toRFC3339(attrs.dateOfBirth),
+      age: str(attrs.age),
       address: {
         line_1: str(address.line1),
         line_2: str(address.line2),

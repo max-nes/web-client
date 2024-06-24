@@ -47,6 +47,22 @@
           :disabled="isDisabled"
         />
       </div>
+      <div class="app__form-field">
+        <amount-input-field
+          white-autofill
+          v-model="age"
+          :min="18"
+          :max="120"
+          :step="1"
+          @change="former.setAttr('age', age)"
+          @blur="touchField('age')"
+          name="verefication-general-age"
+          :asset="age"
+          :label="'general-form.age-lbl' | globalize"
+          :error-message="getFieldErrorMessage('age')"
+          :disabled="isDisabled"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -55,9 +71,11 @@
 import formMixin from '@/vue/mixins/form.mixin'
 import { required } from '@validators'
 import { KycGeneralFormer } from '@/js/formers/KycGeneralFormer'
+import InputField from '@/vue/fields/InputField.vue'
 
 export default {
   name: 'personal-section',
+  components: { InputField },
 
   mixins: [formMixin],
 
@@ -77,6 +95,7 @@ export default {
       firstName: this.former.attrs.firstName || '',
       lastName: this.former.attrs.lastName || '',
       dateOfBirth: this.former.attrs.dateOfBirth || '',
+      age: this.former.attrs.age || '',
     }
   },
 
@@ -85,6 +104,7 @@ export default {
       firstName: { required },
       lastName: { required },
       dateOfBirth: { required },
+      age: { required },
     }
   },
 }

@@ -12,6 +12,7 @@ export class KycGeneralRecord extends KycRecord {
     this.firstName = kyc.first_name
     this.lastName = kyc.last_name
     this.dateOfBirth = kyc.date_of_birth
+    this.age = kyc.age
     this.address = {
       line1: kycAddr.line_1,
       line2: kycAddr.line_2,
@@ -26,5 +27,6 @@ export class KycGeneralRecord extends KycRecord {
     this.avatar = new Document(kycDocs.kyc_avatar)
     this.proofOfInvestor = new Document(kycDocs.kyc_proof_investor)
     this.selfie = new Document(kycDocs.kyc_selfie)
+    //  console.log(blob)
   }
 }
