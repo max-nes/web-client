@@ -37,26 +37,7 @@ export class SaleFormer extends Former {
     }
   }
 
-  /**
- *
- * @param {Object} source
- * @param {String} saleId: number of sale
- * @param {String} saleType: number of sale type
- * @param {String} name: sale name
- * @param {String} baseAsset: base asset code
- * @param {String} defaultQuoteAsset: cap asset code
- * @param {String} startTime: start time
- * @param {String} endTime: end time
- * @param {String} softCap: soft cap
- * @param {String} hardCap: hard cap
- * @param {String} baseAssetForHardCap: assets to sell
- * @param {Array} quoteAssets: assets accepted for investments
- * @param {Boolean} isWhitelisted: is whitelisted
- * @param {Object} logo: sale logo
- * @param {String} shortDescription: short sale description
- * @param {String} youtubeVideoId: youTube video id
- * @param {String} description: full sale description
- */
+  /** @param {CreateSaleRequest} source*/
   populate (source) {
     this.attrs = this._defaultAttrs
     this.attrs.requestId = source.id

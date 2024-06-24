@@ -17,7 +17,7 @@ export class LimitsFormer extends Former {
         monthlyOut: '',
         annualOut: '',
         note: '',
-        requestType: '',
+        requestType: LIMITS_REQUEST_TYPE.initial,
         statsOpType: '',
         operationType: '',
       }
@@ -38,22 +38,21 @@ export class LimitsFormer extends Former {
             monthlyOut: attrs.monthlyOut,
             weeklyOut: attrs.weeklyOut,
           },
-          requestType: LIMITS_REQUEST_TYPE.initial,
+          requestType: attrs.requestType,
           note: attrs.note,
         },
       })
     }
 
-    populate (limits) {
+    /** @param {LimitsRecord} source*/
+    populate (source) {
       this.attrs = this.attrs || this._defaultAttrs
 
-      this.attrs.dailyOut = limits.dailyOut
-      this.attrs.weeklyOut = limits.weeklyOut
-      this.attrs.monthlyOut = limits.monthlyOut
-      this.attrs.annualOut = limits.annualOut
-      this.attrs.assetCode = limits.assetCode
-      this.attrs.requestType = limits.requestType
-      this.attrs.statsOpType = limits.statsOpType
-      this.attrs.operationType = limits.operationType
+      this.attrs.annualOut = source.annualOut
+      this.attrs.assetCode = source.assetCode
+      this.attrs.dailyOut = source.dailyOut
+      this.attrs.monthlyOut = source.monthlyOut
+      this.attrs.weeklyOut = source.weeklyOut
+      this.attrs.statsOpType = source.statsOpType
     }
 }

@@ -84,7 +84,6 @@
 
 <script>
 import FormMixin from '@/vue/mixins/form.mixin'
-import { LIMITS_REQUEST_TYPE } from '@/js/const/limits.const'
 import { LimitsFormer } from '@/js/formers/LimitsFormer'
 import { STATS_OPERATION_TYPES } from '@tokend/js-sdk'
 import config from '@/config'
@@ -133,6 +132,10 @@ export default {
       required: true,
       default: () => ({}),
     },
+    former: {
+      type: LimitsFormer,
+      default: () => new LimitsFormer(),
+    },
   },
   data: () => ({
     statsOpType: FORMATTED_STATS_OPERATION_TYPES[0].value,
@@ -144,19 +147,22 @@ export default {
     selectedOpType () {
       return this.limits[STATS_OPERATION_TYPES_KEY_NAMES[this.statsOpType]]
     },
-    former () {
-      return new LimitsFormer({
-        dailyOut: this.selectedOpType.dailyOut,
-        weeklyOut: this.selectedOpType.weeklyOut,
-        monthlyOut: this.selectedOpType.monthlyOut,
-        annualOut: this.selectedOpType.annualOut,
-        assetCode: this.selectedOpType.assetCode,
-        requestType: LIMITS_REQUEST_TYPE.initial,
-        statsOpType: this.statsOpType,
-        operationType: STATS_OPERATION_TYPES_KEY_NAMES[this.statsOpType],
-      })
+  },
+
+  watch: {
+    'statsOpType' () {
+      this.former.populate(this.selectedOpType)
+      this.former.setAttr('operationType',
+        STATS_OPERATION_TYPES_KEY_NAMES[this.statsOpType])
     },
   },
+
+  created () {
+    this.former.populate(this.selectedOpType)
+    this.former.setAttr('operationType',
+      STATS_OPERATION_TYPES_KEY_NAMES[this.statsOpType])
+  },
+
   methods: {
     getLimitByScope (period) {
       const limitByType = this.selectedOpType
