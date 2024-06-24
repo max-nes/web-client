@@ -20,7 +20,7 @@ export class TransferFormer extends Former {
         subject: '',
         isPaidFeeForRecipient: false,
         recipientAccountId: '',
-        fee: {
+        fees: {
           sourceFee: {
             percent: '',
             fixed: '',
@@ -42,12 +42,12 @@ export class TransferFormer extends Former {
         amount: attrs.amount,
         feeData: {
           sourceFee: {
-            percent: str(attrs.fee.sourceFee.percent),
-            fixed: str(attrs.fee.sourceFee.fixed),
+            percent: str(attrs.fees.sourceFee.percent),
+            fixed: str(attrs.fees.sourceFee.fixed),
           },
           destinationFee: {
-            percent: str(attrs.fee.destinationFee.percent),
-            fixed: str(attrs.fee.destinationFee.fixed),
+            percent: str(attrs.fees.destinationFee.percent),
+            fixed: str(attrs.fees.destinationFee.fixed),
           },
           sourcePaysForDest: attrs.isPaidFeeForRecipient,
         },
@@ -67,12 +67,12 @@ export class TransferFormer extends Former {
         senderAccountId: senderAccountId,
       })
 
-      this.attrs.fee.sourceFee.percent =
+      this.attrs.fees.sourceFee.percent =
         response.sourceFee.calculatedPercent
-      this.attrs.fee.sourceFee.fixed = response.sourceFee.fixed
-      this.attrs.fee.destinationFee.percent =
+      this.attrs.fees.sourceFee.fixed = response.sourceFee.fixed
+      this.attrs.fees.destinationFee.percent =
         response.destinationFee.calculatedPercent
-      this.attrs.fee.destinationFee.fixed = response.destinationFee.fixed
+      this.attrs.fees.destinationFee.fixed = response.destinationFee.fixed
 
       return response
     }

@@ -16,7 +16,9 @@ export class InvestFormer extends Former {
         senderAccountId: '',
         investedAssetCode: '',
         amount: '0',
-        fees: '0',
+        fees: {
+          totalFeePercent: '',
+        },
         baseBalanceId: '',
         quoteBalanceId: '',
         saleId: '',
@@ -36,7 +38,7 @@ export class InvestFormer extends Former {
       operations.push(base.ManageOfferBuilder.manageOffer(
         this._getOfferOpts(
           this.attrs.currentInvestmentId,
-          this.attrs.fees)
+          this.attrs.fees.totalFeePercent)
       ))
 
       return operations
@@ -82,7 +84,7 @@ export class InvestFormer extends Former {
         senderAccountId: this.attrs.senderAccountId,
         type: FEE_TYPES.investFee,
       })
-      this.attrs.fees = response.totalFee.calculatedPercent
+      this.attrs.fees.totalFeePercent = response.totalFee.calculatedPercent
 
       return response
     }

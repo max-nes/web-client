@@ -21,7 +21,9 @@ export class TradeFormer extends Former {
         baseBalanceId: '',
         quoteBalanceId: '',
         creatorAccountId: '',
-        fees: {},
+        fees: {
+          totalFeePercent: '',
+        },
       }
     }
 
@@ -36,7 +38,7 @@ export class TradeFormer extends Former {
         isBuy: this.attrs.isBuy,
         baseBalance: this.attrs.baseBalanceId,
         quoteBalance: this.attrs.quoteBalanceId,
-        fee: this.attrs.fees.calculatedPercent,
+        fee: this.attrs.fees.totalFeePercent,
       }
       return base.ManageOfferBuilder.manageOffer(operation)
     }
@@ -48,7 +50,8 @@ export class TradeFormer extends Former {
         senderAccountId: this.attrs.creatorAccountId,
         type: FEE_TYPES.offerFee,
       })
-      this.attrs.fees = fee.totalFee
+      this.attrs.fees.totalFeePercent = fee.totalFee.calculatedPercent
+
       return fee
     }
 

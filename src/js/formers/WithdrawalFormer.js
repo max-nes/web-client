@@ -54,8 +54,8 @@ export class WithdrawalFormer extends Former {
         type: FEE_TYPES.withdrawalFee,
       })
       this.attrs.fees.sourceFee.fixed = response.sourceFee.fixed
-      // eslint-disable-next-line max-len
-      this.attrs.fees.sourceFee.calculatedPercent = response.sourceFee.calculatedPercent
+      this.attrs.fees.sourceFee.calculatedPercent =
+        response.sourceFee.calculatedPercent
 
       return response
     }
