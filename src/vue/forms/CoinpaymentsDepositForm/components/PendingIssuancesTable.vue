@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import PendingIssuancesTableRow from './pending-issuances-table-row'
+import PendingIssuancesTableRow from './PendingIssuancesTableRow'
 
 export default {
   name: 'pending-issuances-table',

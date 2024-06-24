@@ -31,7 +31,7 @@
 
         <template v-for="item in assets">
           <template v-if="item === selectedAsset && item.isCoinpayments">
-            <coinpayments-deposit-module
+            <coinpayments-deposit-form
               :asset="item"
               :balance-id="balanceId"
               :account-id="accountId"
@@ -77,7 +77,7 @@
 <script>
 import Loader from '@/vue/common/Loader'
 import AddressLoader from './components/AddressLoader'
-import CoinpaymentsDepositModule from '@/vue/modules/coinpayments-deposit'
+import CoinpaymentsDepositForm from '@/vue/forms/CoinpaymentsDepositForm'
 
 import FormMixin from '@/vue/mixins/form.mixin'
 
@@ -91,7 +91,7 @@ export default {
   components: {
     Loader,
     AddressLoader,
-    CoinpaymentsDepositModule,
+    CoinpaymentsDepositForm,
   },
   mixins: [FormMixin],
 

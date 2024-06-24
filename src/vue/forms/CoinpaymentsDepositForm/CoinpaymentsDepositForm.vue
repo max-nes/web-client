@@ -30,17 +30,17 @@
 </template>
 
 <script>
-import CoinpaymentsForm from './components/coinpayments-form'
-import PendingIssuancesTable from './components/pending-issuances-table'
+import CoinpaymentsForm from './components/CoinpaymentsForm'
+import PendingIssuancesTable from './components/PendingIssuancesTable'
 import CollectionLoader from '@/vue/common/CollectionLoader'
 import Loader from '@/vue/common/Loader'
 
 import { api } from '@/api'
-import { IssuanceRecord } from './wrappers/issuance.record'
+import { IssuanceRecord } from '@/js/records/entities/issuance.record'
 import { ErrorHandler } from '@/js/helpers/error-handler'
 
 export default {
-  name: 'coinpayments-deposit',
+  name: 'coinpayments-deposit-form',
   components: {
     CoinpaymentsForm,
     PendingIssuancesTable,
